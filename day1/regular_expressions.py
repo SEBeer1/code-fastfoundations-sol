@@ -159,13 +159,13 @@ def control_flags():
 
 
 def main():
-    get_match_object()
-    character_classes()
-    positional_anchors()
-    quantifiers()
-    custom_classes_and_escaping_sequences()
-    grouping_and_capturing_regexes()
-    control_flags()
+    # get_match_object()
+    # character_classes()
+    # positional_anchors()
+    # quantifiers()
+    # custom_classes_and_escaping_sequences()
+    # grouping_and_capturing_regexes()
+    # control_flags()
     return 0
 
 

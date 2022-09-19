@@ -45,7 +45,6 @@ def main():
     sq_dict = dict_to_squared_dict(my_dict)
     print(f"{dict_to_squared_dict(my_dict) = }")
     filtered_dict = filter(lambda v: 70 < v < 100, sq_dict.values())
-
     return 0
 
 

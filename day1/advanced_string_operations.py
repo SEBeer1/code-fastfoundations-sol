@@ -3,6 +3,24 @@ import shutil
 import sys
 import textwrap
 
+def input_str_to_3d_distance(input_str):
+    split_list = input_str.split('|')
+    first_point = [float(split_list[3]), float(split_list[4]), float(split_list[5])]
+    second_point = [float(split_list[6]), float(split_list[7]), float(split_list[8])]
+    dx = first_point[0] - second_point[0]
+    dy = first_point[1] - second_point[1]
+    dz = first_point[2] - second_point[2]
+    distance = (dx * dx + dy * dy + dz * dz) ** (1/2)
+    return distance
+
+def translated_str():
+    kr_string = "화창한가요?"
+    print(kr_string)
+    print(f"{len(kr_string) = }")
+    kr_bytes = kr_string.encode('utf-8')
+    print(f"{len(kr_bytes) = }")
+    print(f"{kr_bytes = }")
+    #3 bytes for each korean character, one for ?
 
 def print_5s():
     sssss = "整理、 整頓、 清楚、 清潔、 しつけ"
@@ -57,7 +75,7 @@ def string_search(word, replace_with='fishcake'):
     print(f"{sentence.replace(word, replace_with)}")
 
 
-def string_is_properties(string):
+def string_is_properties(string: str):
     # isalnum, isalpha, isprintable, isspace
     print(f"{string.isalnum() = }")
     print(f"{string.isalpha() = }")
@@ -94,10 +112,10 @@ def string_method_formatting(string: str):
     width, height = shutil.get_terminal_size()
     print(f"terminal dimensions (w,h): {width, height}")
     # justification: rjust, center, ljust, zfill
-    print(string.rjust80)
-    print(string.center80)
-    print(string.ljust80)
-    print(string.zfill80)
+    print(string.rjust(width))
+    print(string.center(width))
+    print(string.ljust(width))
+    print(string.zfill(width))
     # case: capitalize, swapcase, upper, lower, title
     print(f"{string.capitalize() = }")
     print(f"{string.swapcase() = }")
@@ -164,10 +182,12 @@ def main():
     # working_with_bytes()
     # print_triple_quoted()
     # string_search('who')
-    # string_is_properties(input())
+    #string_is_properties(input())
     # slicing_and_dicing_strings(input())
-    # string_method_formatting(input())
-    # string_format_minilanguage()
+    #string_method_formatting(input())
+    string_format_minilanguage()
+    #translated_str()
+    #print(input_str_to_3d_distance('violet_blue|convert|red|6.3327|9.4423|113.3428|7.3298|5.3353|9.9283|over|all'))
     return 0
 
 
