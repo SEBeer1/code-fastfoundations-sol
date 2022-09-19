@@ -6,6 +6,15 @@ def double_number(n):
     return 2 * n
 
 
+
+def dict_to_squared_dict(input_dict):
+    result_dict = dict()
+    for key, value in input_dict.items():
+        result_dict[key] = value ** 2
+    return result_dict
+
+
+
 def using_map():
     """Double the given number"""
     random_numbers = random.choices(range(200), k=10)
@@ -28,9 +37,14 @@ def using_filter():
 
 
 def main():
-    using_map()
-    using_map_and_lambda()
-    using_filter()
+    #using_map()
+    #using_map_and_lambda()
+    #using_filter()
+    my_dict = {"one": 1, "two": 2}
+    sq_dict = dict_to_squared_dict(my_dict)
+    print(f"{dict_to_squared_dict(my_dict) = }")
+    filtered_dict = filter(lambda v: 70 < v < 100, sq_dict.values())
+
     return 0
 
 
