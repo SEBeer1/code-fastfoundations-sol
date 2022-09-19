@@ -7,6 +7,7 @@ def double_number(n):
 
 
 
+#cool that it shows who wrote the function
 def dict_to_squared_dict(input_dict):
     result_dict = dict()
     for key, value in input_dict.items():
