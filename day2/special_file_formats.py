@@ -76,11 +76,23 @@ def compressing_binary_data():
     print(f"{data2 = }")
 
 
+def compress_homo():
+    import gzip
+    with open("Homo_sapiens.GRCh38.107.shuffled_and_truncated.gtf") as f, gzip.open("Homo_sapiens.GRCh38.107.shuffled_and_truncated.gtf.gz", 'wb') as g:
+        for row in f:
+            g.write(row.encode('utf-8'))
+    with gzip.open("Homo_sapiens.GRCh38.107.shuffled_and_truncated.gtf.gz") as g:
+        for row in g:
+            print(row)
+
+
+
 def main():
     # working_with_gzip_files()
     # read_json_file()
-    working_with_binary_data()
-    compressing_binary_data()
+    # working_with_binary_data()
+    # compressing_binary_data()
+    compress_homo()
     return 0
 
 

@@ -45,6 +45,22 @@ def navigating_files():
         # perfect!
         print(f"{f.read() = }")
 
+def iterating_over_file_contents():
+    with open("think_different.txt") as f:
+        for row in f:
+            print(row.strip())
+
+
+def read_wagata():
+    with open("wagata.txt", encoding = "utf-32") as f:
+        for row in f:
+            print(row.strip())
+
+def print_number_of_rows(filename, lines=10):
+    with open(filename) as f:
+        lines_read = f.readlines()[:lines]
+        print(lines_read)
+        print(len(lines_read))
 
 def working_with_paths():
     import pathlib
@@ -97,15 +113,23 @@ def useful_path_operations():
     for path_object in my_path.rglob('**/*'):  # recursive globbing
         print(f"\t* {path_object.name:<30} ==> {path_object.parent}")
 
+def read_hidden():
+    import pathlib
+    my_path = pathlib.Path("~/")
+    for fn in my_path.expanduser().glob(".*"):
+        print(fn)
 
 def main():
     # opening_and_closing_files()
     # reading_file_contents()
     # iterating_over_file_contents()
     # navigating_files()
+    # read_wagata()
+    # print_number_of_rows("paradoxical.txt")
     # working_with_paths()
+    read_hidden()
     # testing_paths()
-    useful_path_operations()
+    # useful_path_operations()
     return 0
 
 
