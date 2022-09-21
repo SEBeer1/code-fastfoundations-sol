@@ -86,13 +86,30 @@ def compress_homo():
             print(row)
 
 
+def binary_float_and_ints(): #function not finished, see solutions branch
+    import struct
+    import random
+    int_data = [random.randint(0, 200) for _ in range(1000)]
+    float_data = [random.random() for _ in range(1000)]
+    bin_data = struct.pack("<1000i", *int_data)
+    bin_data += struct.pack("<1000f", *float_data)
+    return bin_data
+
+def revert_to_actual_from_binary(bin_data):
+    import struct
+    int_data = struct.unpack("<1000i", bin_data[:4000])
+    print(f"{int_data[-10:]}")
+    float_data = struct.unpack("<1000f", bin_data[4000])
+    print(f"{float_data[-10:]}")
 
 def main():
     # working_with_gzip_files()
     # read_json_file()
     # working_with_binary_data()
     # compressing_binary_data()
-    compress_homo()
+    # binary_float_and_ints()
+    revert_to_actual_from_binary(binary_float_and_ints())
+    # compress_homo()
     return 0
 
 
