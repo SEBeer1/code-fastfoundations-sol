@@ -67,7 +67,11 @@ def write_text():
     pen.write('Am i a turtle 훈민정음')
     pen.up()
 
+
+
+
 def main():
+
     draw_rectangle()
     draw_circle()
     draw_triangle()
